@@ -1,3 +1,5 @@
+from gui import *
+
 def vote_menu():
 
     choice = input('------------------------------\nVOTE MENU\n------------------------------\nv: Vote\nx: Exit\nOption: ').lower().strip()
@@ -16,6 +18,13 @@ def candidate_menu():
 
 def main():
 
+    window = Tk()
+    window.title('Voting App')
+    window.geometry('240x220')
+    window.resizable(False, False)
+    Gui(window)
+    window.mainloop()
+
     john_votes = 0
     jane_votes = 0
 
@@ -33,4 +42,5 @@ def main():
 
     print('------------------------------\nJohn - ', john_votes, ', Jane - ', jane_votes, ', Total - ', (john_votes + jane_votes), '\n------------------------------', sep = '')
 
-main()
+if __name__ == '__main__':
+    main()
