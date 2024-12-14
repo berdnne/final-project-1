@@ -4,6 +4,12 @@ from tkinter import *
 
 class Gui:
     def __init__(self, window):
+
+        """
+        Creates GUI elements.
+        :param window: The window that elements are housed in
+        """
+
         self.window = window
 
         self.frame_one = Frame(self.window)
@@ -43,7 +49,12 @@ class Gui:
         self.label_info.pack()
         self.frame_five.pack()
 
-    def vote(self):
+    def vote(self) -> None:
+
+        """
+        Verifies valid user ID, gets answer, and stores the vote in votes.csv
+        :return: None
+        """
 
         voter_id = self.input_id.get().strip()
         self.input_id.delete(0, END)
