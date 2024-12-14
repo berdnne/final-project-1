@@ -1,4 +1,5 @@
 from gui import *
+from logic import Voting
 
 def main():
 
@@ -6,7 +7,11 @@ def main():
     window.title('Voting App')
     window.geometry('240x220')
     window.resizable(False, False)
-    Gui(window)
+
+    view = Gui(window)
+    controller = Controller(Voting(), view)
+    view.set_controller(controller)
+
     window.mainloop()
 
 if __name__ == '__main__':
